@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "data/gdp_long_format.csv"
+  },
+  "params": [
+    {
+      "name": "country_select",
+      "value": "World",
+      "bind": {
+        "input": "select",
+        "options": [
+          "World",
+          "United States",
+          "China",
+          "Japan",
+          "Germany",
+          "India"
+        ],
+        "labels": [
+          "World",
+          "United States",
+          "China",
+          "Japan",
+          "Germany",
+          "India"
+        ],
+        "name": "country :"
+      }
+    }
+  ],
+  "vconcat": [
+    {
+      "width": 650,
+      "height": 240,
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {"title": "", "tickCount": 10}
+        },
+        "y": {"field": "Total GDP", "type": "quantitative", "title": "Total GDP(USD)"},
+        "tooltip": [
+            {"field": "Year", "type": "temporal", "title": "Year"},
+            {"field": "Total GDP", "type": "quantitative", "title": "Total GDP(USD)"}   
+        ],
+        "color": {"value": "green"}
+      },
+      "transform": [{"filter": "datum.Country == country_select"}]
+    },
+    {
+      "width": 650,
+      "height": 60,
+      "mark": "line",
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+      ],
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal", "axis": {"tickCount": 10}},
+        "y": {
+          "field": "Total GDP",
+          "type": "quantitative",
+          "title": "Total GDP(USD)",
+          "axis": {"tickCount": 3, "grid": false}
+        },
+        "tooltip": [
+          {"field": "Year", "type": "temporal", "title": "Year"},
+          {"field": "Total GDP", "type": "quantitative", "title": "Total GDP(USD)"}   
+        ],
+        "color": {"value": "green"}
+      }
+      ,"transform": [{"filter": "datum.Country == country_select"}]
+    }
+  ]
+}

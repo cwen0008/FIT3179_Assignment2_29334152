@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 200,
+  "data": {"url": "data/unicorn.csv"},
+
+  "params": [
+      {
+          "name": "value_select",
+          "value": 6,
+          "bind": {
+            "input": "range",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "name": "valuation of company (billion USD):  "
+      }
+  }
+  ],
+  "transform": [{"filter": "datum.Valuation >= value_select"}],
+
+  "mark": "bar",
+  "encoding": {
+      "y":{"field":"Country", "sort": "-x", "title": "country/region"},
+      "x":{"aggregate":"count", "field":"Company", "title": "number of unicorn companies"},
+      "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "country"},
+          {"field": "Country", "type": "quantitative", "aggregate": "count", "title": "number of unicorn companies"}
+      ],
+      "color": {"value": "orange"}
+  }
+}

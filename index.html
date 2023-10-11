@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="js/FIT3179_A2.js"></script>
+
+    <link rel="stylesheet" href="layout.css">
+    <title>FIT3179 Assignment 2</title>
+</head>
+<body>
+
+<div class="center">
+    <h1>Worldwide Economic Analysis</h1>
+
+    <hr>
+    <div id = "section1">
+        <h2>World Economies by GDP per capita</h2>
+        <div id="choropleth_map" class="viz"></div>
+        <p id="section1_text" class="text">
+            The <strong>Gross domestic product(GDP)</strong> per capita is the monetary value of a country's total economic output in a year, divided by its population. It represents the average income of a country's residents before taxes.
+            <br><br>
+            Understanding a country's GDP per capita is an important initial step in gaining insights into the country's economic conditions and requirements, as well as the overall quality of life experienced by the average citizen. A country's GDP per capita is often strongly correlated with various indicators that assess the social, economic, and environmental welfare of the nation and its population.
+        </p>
+    </div>
+
+    <hr>
+    <div id = "section2">
+        <h2>Number of unicorn companies by countries</h2>
+        <div id="barchart" class="viz"></div>
+        <p id="section2_text" class="text">
+            A unicorn company is a term used in the business and investment world to describe a privately held startup company that has reached a valuation of at least $1 billion. The term was coined to represent the rarity of such companies, similar to how mythical unicorns are rare creatures.
+            <br><br>
+            Unicorn companies, those valued at <strong>over $1 billion</strong>, are predominantly 
+            found in the United States due to its combination of a thriving venture 
+            capital landscape, world-renowned universities fostering innovation, a 
+            diverse talent pool, a vast domestic market, strong legal protections, 
+            a supportive entrepreneurial ecosystem, network effects created by existing 
+            tech giants, access to customers and partners, cultural encouragement of 
+            risk-taking, and a historical legacy of global tech leadership. These factors 
+            collectively make the U.S. an ideal environment for startups to flourish and 
+            achieve unicorn status. Here I'm counting all countries with fewer than 10 unicorns as others.
+        </p>
+    </div>
+    <hr>
+
+    <div id="section3">
+        <h2>The development of the world's top five countries by GDP</h2>
+        <div id="linechart" class="viz"></div>
+        <p id="section3_text">
+            Gross Domestic Product (GDP) represents the total market value of all final goods and 
+            services produced within a country during a specific year. Countries are categorized based 
+            on nominal GDP estimates provided by financial and statistical institutions, which are 
+            calculated using market or official government exchange rates. Furthermore, the global GDP 
+            exhibits an overall upward trend, but it is noteworthy that the first year of the pandemic saw 
+            a significant decline in worldwide GDP. 
+            <br><br>
+            It's important to keep in mind that GDP does not account for differences in exchange rates 
+            and the cost of living among countries, and therefore, it may not accurately reflect the 
+            living standards of a country's residents.
+        </p>        
+    </div>
+    <hr>
+
+    <div id="section4">
+        <h2>Economic Structure of World’s Top 5 Economies</h2>
+        <div id="g4" class="viz"></div>
+        <p id="section4_text">
+            text
+        </p>
+    </div>
+
+    <div id="author">made by Chenlongjie Weng</div>
+
+
+</div>
+
+</body>
+</html>
