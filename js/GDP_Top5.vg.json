@@ -33,7 +33,10 @@
     {
       "width": 650,
       "height": 240,
-      "mark": "line",
+      "mark": {
+        "type": "line",
+        "point": true
+      },
       "encoding": {
         "x": {
           "field": "Year",
