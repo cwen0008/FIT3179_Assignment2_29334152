@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "data/gdp_data_top_five.csv"},
+  "width": 650,
+  "height": 240,
+  "params": [
+    {
+      "name": "country_select",
+      "value": "Show All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Show All",
+          "United States",
+          "China",
+          "Japan",
+          "Germany",
+          "India"
+        ],
+        "labels": [
+          "Show All",
+          "United States",
+          "China",
+          "Japan",
+          "Germany",
+          "India"
+        ],
+        "name": "Country :"
+      }
+    }
+  ],
+  "transform": [{"filter": "country_select == 'Show All' || datum.Country == country_select"}],
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {"field": "Year","type": "temporal"},
+    "y": {
+      "field": "Total GDP",
+      "type": "quantitative",
+      "title": "Total GDP (Trillion USD)",
+      "axis": {"format": "s"},
+      "scale": {"domain": [0, 30000000000000]}
+    },
+    "color": {
+      "field": "Country", 
+      "type": "nominal", 
+      "title": "Country",
+      "scale": {
+        "domain": ["United States", "China", "Japan", "Germany", "India"],
+        "range": ["skyblue", "red", "pink", "black", "yellow"]
+      }
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "Year", "type": "temporal", "title": "Year"},
+      {"field": "Total GDP", "type": "quantitative", "title": "Total GDP (USD)", "format": ".4s"}
+    ]
+  }
+}

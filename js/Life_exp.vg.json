@@ -1,69 +1,74 @@
 {
-    "data": {"url": "data/life_expectancy.csv"},
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 650,
-    "height": 240,
-    "transform": [
+  "data": {"url": "data/life_expectancy.csv"},
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 240,
+  "transform": [
       {
-        "filter": {
-          "field": "Country",
-          "oneOf": ["World", "United States", "China", "Japan", "Germany", "India"]
-        }
+          "filter": {
+              "field": "Country",
+              "oneOf": ["World", "United States", "China", "Japan", "Germany", "India"]
+          }
       },
       {
-        "filter": {
-          "field": "Year",
-          "oneOf": [1960, 2000]
-        }
+          "filter": {
+              "field": "Year",
+              "oneOf": [1960, 2021]
+          }
       }
-    ],
-    "encoding": {
+  ],
+  "encoding": {
       "x": {
-        "field": "Life Expectancy",
-        "type": "quantitative",
-        "title": "Life Expectancy (years)"
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "title": "Life Expectancy (Years)"
       },
       "y": {
-        "field": "Country",
-        "type": "nominal",
-        "title": "Country",
-        "axis": {
-          "offset": 5,
-          "ticks": false,
-          "minExtent": 70,
-          "domain": false
-        }
-      }
-    },
-    "layer": [
+          "field": "Country",
+          "type": "nominal",
+          "title": "Country",
+          "axis": {
+              "offset": 5,
+              "ticks": false,
+              "minExtent": 70,
+              "domain": false
+          }
+      },
+      "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "Life Expectancy", "type": "quantitative", "title": "Life Expectancy (Years)"},
+          {"field": "Year", "type": "ordinal", "title": "Year"}
+      ]
+  },
+  "layer": [
       {
-        "mark": "line",
-        "encoding": {
-          "detail": {
-            "field": "Country",
-            "type": "nominal"
-          },
-          "color": {"value": "black"}
-        }
+          "mark": "line",
+          "encoding": {
+              "detail": {
+                  "field": "Country",
+                  "type": "nominal"
+              },
+              "color": {"value": "black"}
+          }
       },
       {
-        "mark": {
-          "type": "point",
-          "filled": true
-        },
-        "encoding": {
-          "color": {
-            "field": "Year",
-            "type": "ordinal",
-            "scale": {
-              "domain": [1960, 2000],
-              "range": ["blue", "red"]
-            },
-            "title": "Year"
+          "mark": {
+              "type": "point",
+              "filled": true
           },
-          "size": {"value": 100},
-          "opacity": {"value": 1}
-        }
+          "encoding": {
+              "color": {
+                  "field": "Year",
+                  "type": "ordinal",
+                  "scale": {
+                      "domain": [1960, 2021],
+                      "range": ["blue", "red"]
+                  },
+                  "title": "Year"
+              },
+              "size": {"value": 100},
+              "opacity": {"value": 1}
+          }
       }
-    ]
-  }
+  ]
+}
