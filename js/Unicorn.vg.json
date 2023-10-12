@@ -13,7 +13,7 @@
               "min": 1,
               "max": 10,
               "step": 1,
-              "name": "valuation of company (billion USD):  "
+              "name": "Valuation of company (billion USD):  "
         }
     }
     ],
@@ -21,8 +21,8 @@
 
     "mark": "bar",
     "encoding": {
-        "y":{"field":"Country", "sort": "-x", "title": "country/region"},
-        "x":{"aggregate":"count", "field":"Company", "title": "number of unicorn companies"},
+        "y":{"field":"Country", "sort": "-x", "title": "Country/Region"},
+        "x":{"aggregate":"count", "field":"Company", "title": "Number of unicorn companies"},
         "tooltip": [
             {"field": "Country", "type": "nominal", "title": "country"},
             {"field": "Country", "type": "quantitative", "aggregate": "count", "title": "number of unicorn companies"}

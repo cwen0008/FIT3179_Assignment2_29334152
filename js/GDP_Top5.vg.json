@@ -25,7 +25,7 @@
           "Germany",
           "India"
         ],
-        "name": "country :"
+        "name": "Country :"
       }
     }
   ],
@@ -44,10 +44,10 @@
           "scale": {"domain": {"param": "brush"}},
           "axis": {"title": "", "tickCount": 10}
         },
-        "y": {"field": "Total GDP", "type": "quantitative", "title": "Total GDP(USD)"},
+        "y": {"field": "Total GDP", "type": "quantitative", "title": "Total GDP (Trillion USD)","axis": {"format": "s"}},
         "tooltip": [
             {"field": "Year", "type": "temporal", "title": "Year"},
-            {"field": "Total GDP", "type": "quantitative", "title": "Total GDP(USD)"}   
+            {"field": "Total GDP", "type": "quantitative", "title": "Total GDP (Trillion USD)", "format": ".4s"}   
         ],
         "color": {"value": "green"}
       },
@@ -65,12 +65,12 @@
         "y": {
           "field": "Total GDP",
           "type": "quantitative",
-          "title": "Total GDP(USD)",
-          "axis": {"tickCount": 3, "grid": false}
+          "title": "Total GDP (Trillion USD)",
+          "axis": {"tickCount": 3, "grid": false, "format": ".4s"}
         },
         "tooltip": [
           {"field": "Year", "type": "temporal", "title": "Year"},
-          {"field": "Total GDP", "type": "quantitative", "title": "Total GDP(USD)"}   
+          {"field": "Total GDP", "type": "quantitative", "title": "Total GDP (USD)", "format": ".4s"}   
         ],
         "color": {"value": "green"}
       }
