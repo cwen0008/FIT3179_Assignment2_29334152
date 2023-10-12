@@ -4,71 +4,97 @@
   "width": 650,
   "height": 240,
   "transform": [
-      {
-          "filter": {
-              "field": "Country",
-              "oneOf": ["World", "United States", "China", "Japan", "Germany", "India"]
-          }
-      },
-      {
-          "filter": {
-              "field": "Year",
-              "oneOf": [1960, 2021]
-          }
+    {
+      "filter": {
+        "field": "Country",
+        "oneOf": ["World", "United States", "China", "Japan", "Germany", "India"]
       }
+    },
+    {
+      "filter": {
+        "field": "Year",
+        "oneOf": [1960, 2021]
+      }
+    }
   ],
   "encoding": {
-      "x": {
-          "field": "Life Expectancy",
-          "type": "quantitative",
-          "title": "Life Expectancy (Years)"
-      },
-      "y": {
-          "field": "Country",
-          "type": "nominal",
-          "title": "Country",
-          "axis": {
-              "offset": 5,
-              "ticks": false,
-              "minExtent": 70,
-              "domain": false
-          }
-      },
-      "tooltip": [
-          {"field": "Country", "type": "nominal", "title": "Country"},
-          {"field": "Life Expectancy", "type": "quantitative", "title": "Life Expectancy (Years)"},
-          {"field": "Year", "type": "ordinal", "title": "Year"}
-      ]
+    "x": {
+      "field": "Life Expectancy",
+      "type": "quantitative",
+      "title": "Life Expectancy (Years)"
+    },
+    "y": {
+      "field": "Country",
+      "type": "nominal",
+      "title": "Country",
+      "axis": {
+        "offset": 5,
+        "ticks": false,
+        "minExtent": 70,
+        "domain": false
+      }
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "Life Expectancy", "type": "quantitative", "title": "Life Expectancy (Years)"},
+      {"field": "Year", "type": "ordinal", "title": "Year"}
+    ]
   },
   "layer": [
-      {
-          "mark": "line",
-          "encoding": {
-              "detail": {
-                  "field": "Country",
-                  "type": "nominal"
-              },
-              "color": {"value": "black"}
-          }
-      },
-      {
-          "mark": {
-              "type": "point",
-              "filled": true
-          },
-          "encoding": {
-              "color": {
-                  "field": "Year",
-                  "type": "ordinal",
-                  "scale": {
-                      "domain": [1960, 2021],
-                      "range": ["blue", "red"]
-                  },
-                  "title": "Year"
-              },
-              "size": {"value": 100},
-              "opacity": {"value": 1}
-          }
+    {
+      "mark": "line",
+      "encoding": {
+        "detail": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "color": {"value": "black"}
       }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true
+      },
+      "encoding": {
+        "color": {
+          "field": "Year",
+          "type": "ordinal",
+          "scale": {
+            "domain": [1960, 2021],
+            "range": ["blue", "red"]
+          },
+          "title": "Year"
+        },
+        "size": {"value": 100},
+        "opacity": {"value": 1}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -10
+      },
+      "transform": [{"filter": "datum.Year === 1960 && datum.Country === 'China'"}],
+      "encoding": {
+        "text": {"value": "In the past, people had considerably shorter life expectancies"},
+        "x": {"field": "Life Expectancy", "type": "quantitative"},
+        "y": {"field": "Country", "type": "nominal"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5
+      },
+      "transform": [{"filter": "datum.Year === 2021 && datum.Country === 'China'"}],
+      "encoding": {
+        "text": {"value": "2021"},
+        "x": {"field": "Life Expectancy", "type": "quantitative"},
+        "y": {"field": "Country", "type": "nominal"}
+      }
+    }
   ]
 }
