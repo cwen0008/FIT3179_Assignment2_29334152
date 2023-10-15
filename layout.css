@@ -1,13 +1,13 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f1f3f4;
+    background-color: white;
 }
 
 .center {
     text-align: center;
     margin: auto;
     width: 850px;
-    background-color: white;
+    background-color: rgb(248, 247, 247);
     padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
@@ -24,7 +24,6 @@ body {
     column-gap: 50px;
     line-height: 20px;
  }
- 
 
  h1 {
     font-size: 50px;
@@ -35,7 +34,7 @@ body {
     color: grey;
     font-size: 12px;
     font-weight: 300;
-    text-align: right;
+    text-align: auto;
  }
 
  a{

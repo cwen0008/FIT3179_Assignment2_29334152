@@ -78,7 +78,7 @@
       },
       "transform": [{"filter": "datum.Year === 1960 && datum.Country === 'China'"}],
       "encoding": {
-        "text": {"value": "In the past, people had considerably shorter life expectancies"},
+        "text": {"value": "low life expectancy in poor time"},
         "x": {"field": "Life Expectancy", "type": "quantitative"},
         "y": {"field": "Country", "type": "nominal"}
       }
@@ -86,12 +86,13 @@
     {
       "mark": {
         "type": "text",
-        "align": "left",
-        "dx": 5
+        "align": "center",
+        "dx": 0,
+        "dy": -10
       },
       "transform": [{"filter": "datum.Year === 2021 && datum.Country === 'China'"}],
       "encoding": {
-        "text": {"value": "2021"},
+        "text": {"value": "high life expectancy with high GDP"},
         "x": {"field": "Life Expectancy", "type": "quantitative"},
         "y": {"field": "Country", "type": "nominal"}
       }
